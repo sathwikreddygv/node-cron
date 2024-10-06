@@ -44,7 +44,7 @@ const _main = () => __awaiter(void 0, void 0, void 0, function* () {
         console.log(err);
     }
 });
-node_cron_1.default.schedule(`0 12 * * *`, () => __awaiter(void 0, void 0, void 0, function* () {
+node_cron_1.default.schedule(`30 4 * * *`, () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`running your task...`);
     (0, db_1.connectDB)().then(() => { _main(); });
 }));
