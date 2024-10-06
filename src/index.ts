@@ -32,7 +32,7 @@ const _main = async() => {
 	}
 }
 
-cron.schedule(`*/10 * * * * *`, async () => { //0 11 * * *
+cron.schedule(`0 11 * * *`, async () => { 
   console.log(`running your task...`);
   connectDB().then(() => {_main()})
 });
