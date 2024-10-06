@@ -32,7 +32,7 @@ const _main = () => __awaiter(void 0, void 0, void 0, function* () {
                         const differenceInMilliseconds = new Date().getTime() - new Date(single_record.date).getTime();
                         const millisecondsInDay = 1000 * 60 * 60 * 24;
                         const differenceInDays = Math.floor(differenceInMilliseconds / millisecondsInDay);
-                        if (differenceInDays >= 0 && differenceInDays <= 2) {
+                        if (differenceInDays >= 26 && differenceInDays <= 36) {
                             yield restAPI.message.sendMessage(single_record.phone, null, `Hey there! 🌼 Flow Friend is Back with a friendly reminder: Your period is around the corner. It's been ${differenceInDays} days since your last one.\n\nJust reply with "Got my period" to update your date.`);
                         }
                     }
@@ -44,7 +44,7 @@ const _main = () => __awaiter(void 0, void 0, void 0, function* () {
         console.log(err);
     }
 });
-node_cron_1.default.schedule(`*/10 * * * * *`, () => __awaiter(void 0, void 0, void 0, function* () {
+node_cron_1.default.schedule(`0 11 * * *`, () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`running your task...`);
     (0, db_1.connectDB)().then(() => { _main(); });
 }));
